@@ -1,0 +1,72 @@
+﻿@model ShopBridge.Web.Models.ProductInput
+
+@{
+    ViewBag.Title = "Add Product";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<h2>Add Product</h2>
+
+@using (Html.BeginForm(new { id = "frmItem" }))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" id="btnSave" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to ProductList", "Index")
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    $('#btnSave').click(function () {
+            $.ajax({
+                type: "POST",
+                url: encodeURI('@Url.Action("Create", "Product")'),
+                cache: false,
+                dataType: 'json',
+                data: $('#frmItem').serialize(),
+                error: function (jqXHR, exception) {
+                    
+                },
+                success: function (data, textStatus, XMLHttpRequest) {
+                            jAlert('UpdateSuccess', 'InformationDialog', function () {
+                                location.href = "@Url.Action("Index", "Product")";
+                            });
+                }
+            });
+    })
+    });
+</script>

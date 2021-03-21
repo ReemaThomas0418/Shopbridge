@@ -1,0 +1,10 @@
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\bin\Debug\ShopBridge.DataObjects.dll
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\bin\Debug\ShopBridge.DataObjects.pdb
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\obj\Debug\ShopBridge.DataObjects.csprojAssemblyReference.cache
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\obj\Debug\ShopBridge.DataObjects.csproj.CoreCompileInputs.cache
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\obj\Debug\ShopBridge.DataObjects.csproj.CopyComplete
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\obj\Debug\ShopBridge.DataObjects.dll
+D:\Interview\ShopBridge\ShopBridge.Web\ShopBridge.DataObjects\obj\Debug\ShopBridge.DataObjects.pdb

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ShopBridge.DataObjects.TblProduct>
+@{
+    ViewBag.Title = "Product List";
+}
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<div class="middle">
+    <div class="maintitle" style="margin-top:15px">
+        <input type="button" class="btn btn-primary" value="Add Product" title="Add Product" id="btnAdd" />
+    </div>
+    <div class="mainblock" style="margin-top:25px">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.ProductID</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Product",new { @id=@item.ProductID})">@item.ProductName</a>
+                    </td>
+                    <td>@item.Description</td>
+                    <td>@item.Price</td>
+                    <td>
+                        <a href="@Url.Action("Delete", "Product",new { @id=@item.ProductID})">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+      $('#btnAdd').click(function () {
+            $.ajax({
+                type: "Get",
+                url: encodeURI('@Url.Action("Create", "Product")'),
+                cache: false,
+                error: function (jqXHR, exception) {
+                     location.href = "@Url.Action("Index", "Product")";
+                },
+                success: function (data, textStatus, XMLHttpRequest) {
+                     location.href = "@Url.Action("Create", "Product")";
+                 }
+
+                })
+            });
+</script>
